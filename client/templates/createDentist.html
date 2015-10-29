@@ -1,0 +1,24 @@
+<template name="createDentist">
+   <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+
+    {{#autoForm collection="dentists" id="insertDentistForm" type="insert"}}
+        <fieldset>
+          <legend>Create Dentist  Entry</legend>
+          {{> afQuickField name='firstName'}}
+          {{> afQuickField name='lastName'}}
+          {{> afQuickField name='address1'}}
+          {{> afQuickField name='address2'}}
+          {{> afQuickField name='city'}}
+          {{> afQuickField name='state'}}
+          {{> afQuickField name='zipCode'}}
+
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Insert</button>
+  {{/autoForm}}
+    </div>
+    <div class="col-md-2"></div>
+
+  </div>
+</template>

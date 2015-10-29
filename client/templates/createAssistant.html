@@ -1,0 +1,31 @@
+<template name="createAssistant">
+   <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+
+        {{#autoForm collection="assistants" id="insertAssistantForm" type="insert"}}
+        <fieldset>
+          <legend>Create Assistant Entry</legend>
+          {{> afQuickField name='firstName'}}
+          {{> afQuickField name='lastName'}}
+          {{> afQuickField name='address1'}}
+          {{> afQuickField name='address2'}}
+          {{> afQuickField name='city'}}
+          {{> afQuickField name='state'}}
+          {{> afQuickField name='zipCode'}}
+          {{> afQuickField name='isAvailableMonday'}}
+          {{> afQuickField name='isAvailableTuesday'}}
+          {{> afQuickField name='isAvailableWednesday'}}
+          {{> afQuickField name='isAvailableThursday'}}
+          {{> afQuickField name='isAvailableFriday'}}
+          {{> afQuickField name='isAvailableSaturday'}}
+          {{> afQuickField name='isAvailableSunday'}}
+
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Insert</button>
+  {{/autoForm}}
+    </div>
+    <div class="col-md-2"></div>
+
+  </div>
+</template>
