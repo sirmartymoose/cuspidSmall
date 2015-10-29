@@ -4,7 +4,7 @@ if (Meteor.isClient) {
         
     $(document).ready(function(){
         
-        $("#createOpportunityDentist").val("HI")
+        $("#createOpportunityDentist").val(atomic.currentUserId())
         
     })
     
