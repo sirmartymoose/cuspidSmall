@@ -1,7 +1,10 @@
 if (Meteor.isClient) {
   
     Template.createDentist.rendered = function () {
-                AutoForm.addHooks('insertDentistForm', {onSuccess: function(){checkUserProfileStatus(); Router.go('dashboard')}});
+                AutoForm.addHooks('insertDentistForm', {onSuccess: function(){
+
+                    Meteor.call('updateUserCollectionToReflectProfileCompletion', function(err,res){console.log(res)})
+                    Router.go('dashboard')}});
         
         
     $(document).ready(function(){

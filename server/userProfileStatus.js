@@ -19,6 +19,11 @@ Meteor.methods({
         }
         
         
+    }, 
+    updateUserCollectionToReflectProfileCompletion: function(){
+        var requestingUser = this.userId
+        Meteor.users.update({_id: requestingUser }, {$set: {'profile.profileCreated': true}})
+        
     }
     
 })

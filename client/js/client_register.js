@@ -38,7 +38,7 @@ if (Meteor.isClient) {
 
         // Trim and validate the input
 
-      Accounts.createUser({email: email, password : password, profile: {isAdmin: false, userType: userType, isDentist: dentist, isAssistant: assistant}}, function(err){
+      Accounts.createUser({email: email, password : password, profile: {isAdmin: false, userType: userType, isDentist: dentist, isAssistant: assistant, profileCreated: false, isApproved: false}}, function(err){
           if (err) {
             // Inform the user that account creation failed
           } else {

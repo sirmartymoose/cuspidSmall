@@ -17,21 +17,30 @@
       <ul class="nav navbar-nav">
 
         {{#if currentUser}}
-        {{#if currentUser.profile.isDentist}}
-                <li id="createDentistLink"><a href="createDentist">createDentist</a></li>
-                <li><a href="createOpportunity">createOpportunity</a></li>
+             {{#if currentUser.profile.isDentist}}
+                   {{#if currentUser.profile.profileCreated}}
+                         <li><a href="updateDentist">Manage Your profile</a></li>
+                         <li><a href="createOpportunity">createOpportunity</a></li>
+                   
+                   {{else}}
+                         <li><a href="createDentist">Create a profile</a></li>
+                   {{/if}}
+            {{/if}}
+             {{#if currentUser.profile.isAssistant}}
+                  {{#if currentUser.profile.profileCreated}}
+                      <li><a href="updateAssistant">Manage Your profile</a></li>
+                      <li><a href="listOpportunities">view Opportunities</a></li>
+                    {{else}}
+                      <li><a href="createAssistant">Create a profile</a></li>
+                      {{/if}}
+            
+            {{/if}}
+        {{else}}
+                 <li><a href="register">Register</a></li>
+                  <li><a href="login">Login</a></li>
         {{/if}}
-        {{#if currentUser.profile.isAssistant}}
-                <li id="createAssistantLink"><a href="createAssistant">createAssistant</a></li>
-        {{/if}}
-        {{#if currentUser.profile.isAdmin}}
-        <li><a href="logs">Logs</a></li>
-        {{/if}}
-          {{else}}
-                  <li><a href="welcome">Welcome</a></li>
-         <li><a href="register">Register</a></li>
-          <li><a href="login">Login</a></li>
-        {{/if}}
+        
+
 
 
 
