@@ -15,15 +15,26 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="welcome">Welcome</a></li>
-        {{#if currentUser}}
 
-        
+        {{#if currentUser}}
+        {{#if currentUser.profile.isDentist}}
+                <li><a href="createDentist">createDentist</a></li>
+                <li><a href="createOpportunity">createOpportunity</a></li>
+        {{/if}}
+        {{#if currentUser.profile.isAssistant}}
+                <li><a href="createAssistant">createAssistant</a></li>
+        {{/if}}
+        {{#if currentUser.profile.isAdmin}}
         <li><a href="logs">Logs</a></li>
-        <li><a href="createAssistant">createAssistant</a></li>
-        <li><a href="createDentist">createDentist</a></li>
-         <li><a href="createOpportunity">createOpportunity</a></li>
-{{/if}}
+        {{/if}}
+          {{else}}
+                  <li><a href="welcome">Welcome</a></li>
+         <li><a href="register">Register</a></li>
+          <li><a href="login">Login</a></li>
+        {{/if}}
+
+
+
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
