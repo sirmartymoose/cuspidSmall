@@ -5,3 +5,65 @@
 #loginInfo{
     text-align: right;
 }
+
+/* Latest compiled and minified CSS included as External Resource*/
+
+/* Optional theme */
+
+ #opportunityTitle {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+#opportunityQualified {
+    font-size: 0.9em;
+    color: green;
+    text-align: left;
+}
+#appContainer {
+    width: 320px;
+    height: 480px;
+    border-radius: 6px;
+    font-family: calibri;
+}
+.appDivider {
+    border-bottom: solid grey 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 80px;
+}
+.appDividerBig {
+    border-bottom: solid grey 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 10px;
+    height: 120px;
+}
+.appDividerMap {
+    border-bottom: solid grey 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 300px;
+}
+.secondaryText {
+    font-size: 1.3em;
+}
+.tertiaryText {
+    font-size: 1.0em;
+}
+.primaryText {
+    font-size: 1.5em;
+}
+.spacer {
+    margin-bottom: 15px;
+}
+.textAlignMiddle {
+    text-align: center;
+}
+#jobDescription {
+    margin-top: 5px;
+}

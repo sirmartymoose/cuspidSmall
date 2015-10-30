@@ -1,0 +1,33 @@
+<template name="updateAssistant">
+   <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+
+    {{#autoForm collection="assistants" id="updateAssistantForm" type="update" doc=selectedPersonDoc}}
+        <fieldset>
+          <legend>Update Assistant</legend>
+          {{> afQuickField name='firstName'}}
+          {{> afQuickField name='lastName'}}
+          {{> afQuickField name='address1'}}
+          {{> afQuickField name='address2'}}
+          {{> afQuickField name='city'}}
+          {{> afQuickField name='state'}}
+          {{> afQuickField name='zipCode'}}
+          {{> afQuickField name='isAvailableMonday'}}
+          {{> afQuickField name='isAvailableTuesday'}}
+          {{> afQuickField name='isAvailableWednesday'}}
+          {{> afQuickField name='isAvailableThursday'}}
+          {{> afQuickField name='isAvailableFriday'}}
+          {{> afQuickField name='isAvailableSaturday'}}
+          {{> afQuickField name='isAvailableSunday'}}
+          {{> afQuickField name='assistantUserId' type="hidden" id="createAssistantUser"}}
+
+
+        </fieldset>
+        <button type="submit" class="btn btn-primary" id="updateDentistButton">Update</button>
+  {{/autoForm}}
+    </div>
+    <div class="col-md-2"></div>
+
+  </div>
+</template>
