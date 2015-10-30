@@ -1,16 +1,10 @@
 if (Meteor.isClient) {
   
     Template.register.rendered = function () {
-        cLog("client_welcome.js", "Template.welcome.rendered")
+        cLog("client_register.js", "Register template rendered"); 
 
         $(document).ready(function(){
-              cLog("client_welcome.js", "Document Ready Fired")
-
-              
-
-              
-              
-
+              cLog("client_register.js", "Document Ready"); 
          })
     }
     
@@ -26,26 +20,21 @@ if (Meteor.isClient) {
         if(userType == 'assistant'){
             var assistant = true
             var dentist = false
+            cLog("client_register.js", "Usertype is assistant"); 
         } 
         
         if (userType == 'dentist'){
             var assistant = false
             var dentist = true
+            cLog("client_register.js", "Usertype is dentist"); 
         }
-        
-
-
-
-        // Trim and validate the input
 
       Accounts.createUser({email: email, password : password, profile: {isAdmin: false, userType: userType, isDentist: dentist, isAssistant: assistant, profileCreated: false, isApproved: false}}, function(err){
           if (err) {
-            // Inform the user that account creation failed
+            cLog("client_register.js", "User Creation Failed"); 
           } else {
-            // Success. Account has been created and the user
-            // has logged in successfully. 
+            cLog("client_register.js", "Register template Success"); 
           }
-
         });
 
       return false;

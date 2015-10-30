@@ -2,18 +2,17 @@ if (Meteor.isClient) {
   
     Template.createDentist.rendered = function () {
                 AutoForm.addHooks('insertDentistForm', {onSuccess: function(){
-
-                    Meteor.call('updateUserCollectionToReflectProfileCompletion', function(err,res){console.log(res)})
+                    cLog("client_createDentist.js", "Insert Dentist successfull")
+                    Meteor.call('updateUserCollectionToReflectProfileCompletion', function(err,res){
+                        cLog("client_createDentist.js", "updateUserCollectionToReflectProfileCompletion")
+                    })
                     Router.go('dashboard')}});
-        
+                    cLog("client_createDentist.js", "Directing the user to the dashboard")
         
     $(document).ready(function(){
-        cLog("create dentist rendered")
+        cLog("client_createDentist.js", "Document Ready")
         $("#createDentistUser").val(atomic.currentUserId())
+        cLog("client_createDentist.js", "Hidden form value assigned to the user")
     })
-    
-        
     }
-    
-    
 }

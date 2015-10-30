@@ -5,12 +5,6 @@ if (Meteor.isClient) {
 
         $(document).ready(function(){
               cLog("client_welcome.js", "Document Ready Fired")
-
-              
-
-              
-              
-
          })
     }
     
