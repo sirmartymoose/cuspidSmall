@@ -7,7 +7,18 @@
         <fieldset>
           <legend>Create Opportunity</legend>
           {{> afQuickField name='needDate'}}
-          {{> afQuickField name='opportunityDentist' id="createOpportunityDentist" type="hidden"}}
+          {{> afQuickField name='startTime'}}
+          {{> afQuickField name='endTime'}}
+          {{> afQuickField name='hourlyRate'}}
+          {{> afQuickField name='description'}}
+          {{> afQuickField name='opportunityDentistId' id="createOpportunityDentist" type="hidden"}}
+          {{> afQuickField name='firstName' id="opportunityFirstName" type="hidden"}}
+          {{> afQuickField name='lastName' id="opportunityLastName" type="hidden"}}
+          {{> afQuickField name='address1' id="opportunityAddress1" type="hidden"}}
+          {{> afQuickField name='address2' id="opportunityAddress2" type="hidden"}}
+          {{> afQuickField name='city' id="opportunityCity" type="hidden"}}
+          {{> afQuickField name='state' id="opportunityState" type="hidden"}}
+          {{> afQuickField name='zipCode' id="opportunityZipCode" type="hidden"}}
         </fieldset>
         <button type="submit" class="btn btn-primary">Insert</button>
   {{/autoForm}}

@@ -17,8 +17,6 @@ Meteor.methods({
                 return false
             }
         }
-        
-        
     }, 
     updateUserCollectionToReflectProfileCompletion: function(){
         var requestingUser = this.userId
