@@ -6,6 +6,7 @@
         {{#autoForm collection="opportunities" id="insertOpportunityForm" type="insert"}}
         <fieldset>
           <legend>Create Opportunity</legend>
+          {{> afQuickField name='positionName'}}
           {{> afQuickField name='needDate'}}
           {{> afQuickField name='startTime'}}
           {{> afQuickField name='endTime'}}
