@@ -19,6 +19,7 @@ if (Meteor.isClient) {
             $("#opportunityCity").val(res[0]['city'])
             $("#opportunityState").val(res[0]['state'])
             $("#opportunityZipCode").val(res[0]['zipCode'])
+            $("#opportunityOfficeName").val(res[0]['officeName'])
         })
 
 

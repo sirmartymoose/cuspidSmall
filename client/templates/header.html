@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Cuspid</a>
+      <a class="navbar-brand" href="/welcome">Cuspid</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -19,25 +19,24 @@
         {{#if currentUser}}
              {{#if currentUser.profile.isDentist}}
                    {{#if currentUser.profile.profileCreated}}
-                         <li><a href="updateDentist">Manage Your profile</a></li>
-                         <li><a href="createOpportunity">createOpportunity</a></li>
+                         <li><a href="/updateDentist">Manage Your profile</a></li>
+                         <li><a href="/createOpportunity">createOpportunity</a></li>
                    
                    {{else}}
-                         <li><a href="createDentist">Create a profile</a></li>
+                         <li><a href="/createDentist">Create a profile</a></li>
                    {{/if}}
             {{/if}}
              {{#if currentUser.profile.isAssistant}}
                   {{#if currentUser.profile.profileCreated}}
-                      <li><a href="updateAssistant">Manage Your profile</a></li>
-                      <li><a href="listOpportunities">view Opportunities</a></li>
+                      <li><a href="/updateAssistant">Manage Your profile</a></li>
+                      <li><a href="/listOpportunities">view Opportunities</a></li>
                     {{else}}
-                      <li><a href="createAssistant">Create a profile</a></li>
+                      <li><a href="/createAssistant">Create a profile</a></li>
                       {{/if}}
             
             {{/if}}
         {{else}}
-                 <li><a href="register">Register</a></li>
-                  <li><a href="login">Login</a></li>
+
         {{/if}}
         
 
@@ -47,8 +46,13 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li>  {{> loginButtons}}</li>
-
+        {{#if currentUser}}
+        <li id="signOut">  Sign Out</li>
+        {{else}}
+                  <li><a href="/register">Register</a></li>
+                  <li><a href="/login">Login</a></li>
+        
+        {{/if}}
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

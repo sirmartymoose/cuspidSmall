@@ -6,6 +6,7 @@
     {{#autoForm collection="dentists" id="updateDentistForm" type="update" doc=selectedPersonDoc}}
         <fieldset>
           <legend>Create Dentist  Entry</legend>
+          {{> afQuickField name='officeName'}}
           {{> afQuickField name='firstName'}}
           {{> afQuickField name='lastName'}}
           {{> afQuickField name='address1'}}

@@ -4,6 +4,7 @@ Meteor.methods({
       outObj = {}
       outObj['positionName'] = outData['positionName'] + " Needed"
       outObj['needDate'] = outData['needDate']
+      outObj['officeName'] = outData['officeName']
       
       var startTime = timeFunctions.convertMilitaryToDisplay(outData['startTime'])
       var endTime = timeFunctions.convertMilitaryToDisplay(outData['endTime'])
@@ -24,9 +25,14 @@ Meteor.methods({
       outObj['address2'] = outData['address2']
       outObj['city'] = outData['city']
       outObj['state'] = outData['state']
+      outObj['cityState'] = outData['city'] + "," + outData['state']
       outObj['zipCode'] = outData['zipCode']
       var rawPay = (parseInt(outData['endTime']) - parseInt(outData['startTime'])) * outData['hourlyRate']  
       outObj['totalPay'] = currencyFunctions.convertIntegerToDisplayDollars(rawPay) + " Total"
+      
+      outObj['iframeMetaData'] = "https://maps.google.com/maps?hl=en&q=" + outData['address1'] + " " + outData['city'] + outData['state'] + "&ie=UTF8&t=roadmap&z=14&iwloc=B&output=embed"
+      
+      //https://maps.google.com/maps?hl=en&q=7948 Caruth Ct Dallas Tx&ie=UTF8&t=roadmap&z=14&iwloc=B&output=embed"
       
 
 
