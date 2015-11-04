@@ -17,6 +17,8 @@ Meteor.methods({
         opportunities.update({_id: oId},{$set: {'booking.contractedDate': contractedDate}})
         //opportunities.update({_id: oId},{$set: {'booking.agreedAmount': rawPay}})
         
+        return opportunities.find({_id: oId}).fetch()
+        
     }
     
 })

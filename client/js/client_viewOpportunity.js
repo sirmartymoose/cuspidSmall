@@ -2,10 +2,16 @@ if (Meteor.isClient) {
     // Check the rendering templates with data section here http://iron-meteor.github.io/iron-router/
 
     Template.viewOpportunity.rendered = function () {
+        Meteor.subscribe("allOpportunities");
+        Meteor.subscribe("userDataAssistant");
+        Meteor.subscribe("userDataDentist");
+
         cLog("client_viewOpportunity.js", "viewOpportunity rendered")
         
         displayOpportunity = function(x){
-            $("#opportunityTitle").html(x['positionName'])
+            
+            spaceElementText('opportunityTitle', 25, x['positionName'])
+            //$("#opportunityTitle").html(x['positionName'])
             $("#opportunityTiming").html(x['needDate'])
             $("#opportunityTimingShort").html(x['needDate'])
             $("#opportunityTimeFrame").html(x['timeFrame'])
@@ -24,6 +30,16 @@ if (Meteor.isClient) {
             Meteor.call('getOpportunityDetails', Router.current().params._id, function(err,res){
                             displayOpportunity(res)
             })
+            
+            if(getUserType(Meteor.userId()) === 'dentist'){
+                $("#assistantActionContainer").html("THIS IS A DENTIST")
+            } 
+        
+            $("#acceptPositionButton").click(function(){
+                Meteor.call('markOpportunityAsBooked',Router.current().params._id, function(err,res){console.log(err); console.log(res)})
+            })
+            
+            
         })
         
 

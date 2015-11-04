@@ -1,11 +1,11 @@
 <template name="updateDentist">
    <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
+    <div class="col-xs-0 col-md-4"></div>
+    <div class="col-xs-12 col-md-4">
 
     {{#autoForm collection="dentists" id="updateDentistForm" type="update" doc=selectedPersonDoc}}
         <fieldset>
-          <legend>Create Dentist  Entry</legend>
+          <legend>Update Your Dentist Profile</legend>
           {{> afQuickField name='officeName'}}
           {{> afQuickField name='firstName'}}
           {{> afQuickField name='lastName'}}
@@ -21,7 +21,7 @@
         <button type="submit" class="btn btn-primary" id="updateDentistButton">Update</button>
   {{/autoForm}}
     </div>
-    <div class="col-md-2"></div>
+    <div class="col-xs-0 col-md-4"></div>
 
   </div>
 </template>

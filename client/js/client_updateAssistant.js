@@ -1,6 +1,7 @@
 if (Meteor.isClient) {
   
     Template.updateAssistant.rendered = function () {
+        Meteor.subscribe("userDataAssistant");
          cLog("client_updateAssistant.js", "updateAssistant template rendered"); 
                  AutoForm.addHooks('updateAssistantForm', {onSuccess: function(){
                      cLog("client_updateAssistant.js", "updateAssistant form completed"); 

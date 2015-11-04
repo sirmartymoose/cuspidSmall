@@ -13,6 +13,7 @@
  #opportunityTitle {
     font-size: 1.5em;
     font-weight: bold;
+    text-overflow: ellipsis;
 }
 #opportunityQualified {
     font-size: 0.9em;

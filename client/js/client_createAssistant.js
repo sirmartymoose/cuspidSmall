@@ -1,6 +1,7 @@
 if (Meteor.isClient) {
   
     Template.createAssistant.rendered = function () {
+        Meteor.subscribe("userDataAssistant");
         AutoForm.addHooks('insertAssistantForm', {onSuccess: function(){
             cLog("client_createAssistant.js", "Insert Assistant successfull")
             Meteor.call('updateUserCollectionToReflectProfileCompletion', function(err,res){

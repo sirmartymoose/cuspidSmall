@@ -1,6 +1,7 @@
 if (Meteor.isClient) {
   
     Template.updateDentist.rendered = function () {
+        Meteor.subscribe("userDataDentist");
          cLog("client_updateDentist.js", "updateDentist template rendered"); 
                  AutoForm.addHooks('updateDentistForm', {onSuccess: function(){
                      cLog("client_updateAssistant.js", "form updated succesfully"); 

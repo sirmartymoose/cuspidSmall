@@ -1,11 +1,10 @@
 <template name="createAssistant">
    <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-
+    <div class="col-xs-0 col-md-4"></div>
+    <div class="col-xs-12 col-md-4">
         {{#autoForm collection="assistants" id="insertAssistantForm" type="insert"}}
         <fieldset>
-          <legend>Create Assistant Entry</legend>
+          <legend>Create a Profile</legend>
           {{> afQuickField name='firstName'}}
           {{> afQuickField name='lastName'}}
           {{> afQuickField name='address1'}}
@@ -25,7 +24,7 @@
         <button type="submit" class="btn btn-primary" id="insertButton">Insert</button>
   {{/autoForm}}
     </div>
-    <div class="col-md-2"></div>
+    <div class="col-xs-0 col-md-4"></div>
 
   </div>
 </template>

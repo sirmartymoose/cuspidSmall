@@ -2,10 +2,10 @@ if (Meteor.isClient) {
     
     // Check the rendering templates with data section here http://iron-meteor.github.io/iron-router/
   
-    Template.listOpportunities.rendered = function () {
+    Template.listBookings.rendered = function () {
 
 
-        cLog("client_listOpportunities.js", "listOpportunties template rendered")
+        cLog("client_listBookings.js", "listBookings template rendered")
         
         renderOpportunities = function(inputObjects){
             htmlString = ""
@@ -25,7 +25,7 @@ if (Meteor.isClient) {
         }
 
         $(document).ready(function(){
-            myOpportunityData = opportunities.find({status: "opportunity"}).fetch()
+            myOpportunityData = opportunities.find({status: "booking"}).fetch()
             renderOpportunities(myOpportunityData)
         
         
