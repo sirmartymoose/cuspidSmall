@@ -3,6 +3,9 @@ if (Meteor.isClient) {
     // Check the rendering templates with data section here http://iron-meteor.github.io/iron-router/
   
     Template.listOpportunities.rendered = function () {
+        cLog("client_listOpportunities.js", "subscribing to test")
+        Meteor.subscribe("allOpportunities");
+
         cLog("client_listOpportunities.js", "listOpportunties template rendered")
         
         renderOpportunities = function(inputObjects){

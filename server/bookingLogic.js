@@ -12,7 +12,7 @@ Meteor.methods({
         
         opportunities.update({_id: oId},{$set: {'booking.isBooked': true}})
         opportunities.update({_id: oId},{$set: {'booking.assistantId': this.userId}})
-        opportunities.update({_id: oId},{$set: {'state': 'booking'}})
+        opportunities.update({_id: oId},{$set: {'status': 'booking'}})
         opportunities.update({_id: oId},{$set: {'booking.hasOccurred': true}})
         opportunities.update({_id: oId},{$set: {'booking.contractedDate': contractedDate}})
         //opportunities.update({_id: oId},{$set: {'booking.agreedAmount': rawPay}})
