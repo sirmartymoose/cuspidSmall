@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fa769a7-940e-4ddc-8837-e2096e7165eb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/dataModel.js" afterPath="$PROJECT_DIR$/lib/dataModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/header.html" afterPath="$PROJECT_DIR$/client/templates/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/style.css" afterPath="$PROJECT_DIR$/client/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/welcome.html" afterPath="$PROJECT_DIR$/client/templates/welcome.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cuspidSmall.iws" />
@@ -437,6 +433,13 @@
       <option name="number" value="Default" />
       <updated>1446391615406</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added some styling to welcome">
+      <created>1446987777958</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1446987777958</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -475,7 +478,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Added some styling to welcome" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some styling to welcome" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
