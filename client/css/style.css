@@ -84,3 +84,22 @@
 #opportunityJobDescription {
     margin-top: 5px;
 }
+
+.listing_positionTitle{
+    font-size: 1.1em;
+}
+
+.listing_positionTiming{
+    font-size: 1.0em;
+}
+
+.listing_positionStatus{
+    font-size: 1.0em;
+    color: green;
+    text-align: right;
+    
+}
+
+.textAlignRight{
+    text-align: right;
+}

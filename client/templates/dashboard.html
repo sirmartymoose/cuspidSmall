@@ -1,10 +1,68 @@
 <template name="dashboard">
-   <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-DASHBOARD
-    </div>
-    <div class="col-md-2"></div>
+    <div class="row">
+        <div class="col-xs-0 col-md-3"></div>
+        <div class="col-xs-12 col-md-6">
+            <div class='row'>
+                <div class='col-xs-12'>
+                    <div class="page-header">
+                         <h3>Dashboard </h3>
 
-  </div>
+                    </div>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-xs-12'>
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">Your Account Status</div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class='col-xs-12' id='accountStatus'>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!-- List group -->
+                    </div>
+                </div>
+            </div>
+                        <div class='row'>
+                <div class='col-xs-12'>
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-8">Current Opportunities (Most Recent)</div>
+                                <div class="col-xs-4 textAlignRight"><a href="/listOpportunities">View All</a></div>
+                            </div>
+                        </div>
+                        <!-- List group -->
+                        <ul class="list-group" id="dashboardCurrentOpportunities">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                                    <div class='row'>
+                <div class='col-xs-12'>
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                                                <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-8">Past Jobs (Most Recent)</div>
+                                <div class="col-xs-4 textAlignRight"><a href="/listBookings">View All</a></div>
+                            </div>
+                        </div>
+                        <!-- List group -->
+                        <ul class="list-group" id="dashboardCurrentBookings">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xs-0 col-md-3"></div>
+    </div>
 </template>
