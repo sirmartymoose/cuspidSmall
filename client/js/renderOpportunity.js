@@ -32,8 +32,4 @@
                 } else {
                     return opportunities.find({'booking.isBooked':true}).fetch()
                 }
-        
-
-            
-            
         }

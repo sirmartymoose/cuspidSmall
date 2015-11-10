@@ -103,3 +103,18 @@
 .textAlignRight{
     text-align: right;
 }
+
+.opportunityStrip{
+    padding: 10px;
+    border-bottom: solid grey 1px;
+}
+
+.opportunityPrimary{
+    font-size: 1.2em;
+
+}
+
+
+.opportunitySecondary{
+    font-size: 1.0em;
+}

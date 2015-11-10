@@ -1,100 +1,80 @@
 <template name="viewOpportunity">
 
-  <div class="container" id="appContainer">
-    <div class="row appDivider">
-        <div class="row">
-            <div class="col-xs-12">
-                <div id="opportunityTitle">opt Title</div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-8">
-                <div id="opportunityTiming" data-toggle="tooltip" title="Hooray!">Tomorrow (12/10/2015)</div>
-            </div>
-            <div class="col-xs-4"></div>
-        </div>
-    </div>
-    <div class="row appDivider">
-        <div class="row">
-            <div class="col-xs-0"></div>
-            <div class="col-xs-5 tertiaryText" id="opportunityTimingShort">Tomorrow</div>
-            <div class="col-xs-4"></div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 secondaryText textAlignMiddle" id="opportunityTimeFrame">10:00AM - 5:00PM</div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 spacer"></div>
-        </div>
-    </div>
-    <div class="row appDivider">
-        <div class="row">
-            <div class="col-xs-0"></div>
-            <div class="col-xs-5 tertiaryText" id="opportunityHourlyRate">$20.00 Hour</div>
-            <div class="col-xs-4"></div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 secondaryText textAlignMiddle" id="opportunityCostTotal">$120.00 Total</div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 spacer"></div>
-        </div>
-    </div>
-    <div class="row appDividerBig">
-        <div class="row">
-            <div class="col-xs-12 tertiaryText">Job Description</div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12" id="opportunityJobDescription">This is a description of the position in question. If you have these skills please let us know and we will look forward to working with you</div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 spacer"></div>
-        </div>
-    </div>
-    <div class="row appDividerBig">
-        <div class="row">
-            <div class="col-xs-12 tertiaryText" id="opportunityOfficeName">Dr Gregory Pfieffer</div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12" id="opportunityAddress1">7948 Caruth Ct</div>
-            <div class="col-xs-12" id="opportunityAddress2"></div>
-            <div class="col-xs-12" id="opportunityCityState">Dallas, TX</div>
-            <div class="col-xs-12" id="opportunityZipCode">75225</div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 spacer"></div>
-        </div>
-    </div>
-    <div class="row appDividerMap">
-        <div class="row">
-            <div class="col-xs-0"></div>
-            <div class="col-xs-12">
-                <iframe id='gmap' frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="300" height="280" src="https://maps.google.com/maps?hl=en&q=7948 Caruth Ct Dallas Tx&ie=UTF8&t=roadmap&z=14&iwloc=B&output=embed"></iframe>
-            </div>
-            <div></div>
-            <div></div>
-            
-            <div class="col-xs-0"></div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 spacer"></div>
-        </div>
-    </div>
-
-                <div class="row appDivider">
-                <div class="row" id="assistantActionContainer">
-                    <div class="col-xs-2"></div>
-              <div class="col-xs-2"><button type="button" class="btn btn-default" id="ignorePositionButton">Cancel</button></div>
-                     <div class="col-xs-2"></div>
-                     <div class="col-xs-2" id="acceptContainer"><button type="button" class="btn btn-success" id="acceptPositionButton">Accept</button></div>
+    <div class="row">
+        <div class="col-xs-0 col-md-3"></div>
+        <div class="col-xs-12 col-md-6">
+            <div class='panel panel-default'>
+               <div class="panel-heading">
+                   <div class="row">
+                    <div class="col-xs-8">Opportunity Details</div>
+                    <div class="col-xs-4 textAlignRight">{{opportunityData.status}}</div>
                     </div>
-                <div class="row">
-                    <div class="col-xs-12 spacer"></div>
+                   
                 </div>
+               <div class="panel-body">
+               <div class="col-xs-12">
+                   <div class="row opportunityStrip">
+                       <div class="col-xs-12 opportunityPrimary">
+                           {{opportunityData.positionName}}
+                       </div>
+                       <div class="col-xs-12 opportunitySecondary">
+                           Tomorrow (10/12/2015)
+                       </div>
+                   </div>
+               </div>
+                <div class="col-xs-12">
+                   <div class="row opportunityStrip">
+                       <div class="col-xs-12 opportunityPrimary">
+                           {{opportunityData.timing}}
+                       </div>
+                       <div class="col-xs-12 opportunitySecondary">
+                           Tomorrow
+                       </div>
+                   </div>
+               </div>
+                  <div class="col-xs-12">
+                   <div class="row opportunityStrip">
+                       <div class="col-xs-12 opportunityPrimary">
+                           {{opportunityData.totalCost}}
+                       </div>
+                       <div class="col-xs-12 opportunitySecondary">
+                           {{opportunityData.hourlyString}}
+                       </div>
+                   </div>
+               </div>
+                <div class="col-xs-12">
+                   <div class="row opportunityStrip">
+                       <div class="col-xs-12 opportunityPrimary">
+                          Description
+                       </div>
+                       <div class="col-xs-12 opportunitySecondary">
+                                {{opportunityData.description}}                       
+                        </div>
+                   </div>
+               </div>
+                <div class="col-xs-12">
+                   <div class="row opportunityStrip">
+                       <div class="col-xs-12 opportunityPrimary">
+                          Address
+                       </div>
+                       <div class="col-xs-12 opportunitySecondary">{{opportunityData.address1}}</div>
+                       <div class="col-xs-12 opportunitySecondary">{{opportunityData.address2}}</div>
+                       <div class="col-xs-12 opportunitySecondary">{{opportunityData.cityState}}</div>
+                       <div class="col-xs-12 opportunitySecondary">{{opportunityData.zipCode}}</div>
+                   </div>
+               </div>
+                <div class="col-xs-12">
+                    <button type="button" class="btn btn-success">Success</button>
+
+               </div>
+                          
+              </div> 
+               
+
             </div>
-
-
-</div>
+        </div>
+        <div class="col-xs-0 col-md-3"> </div>
+    </div>
   
 
 </template>

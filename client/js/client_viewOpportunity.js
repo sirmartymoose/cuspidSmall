@@ -1,5 +1,32 @@
 if (Meteor.isClient) {
     // Check the rendering templates with data section here http://iron-meteor.github.io/iron-router/
+    Template.viewOpportunity.helpers({
+        opportunityData: function () {
+            
+            oo = {}
+            io =  opportunities.findOne({_id: Router.current().params._id})
+
+            numHours = io['endTime'] - io['startTime']
+            totalCost = numHours * io['hourlyRate']
+
+            oo['status'] = getOpportunityStatus(io)
+            oo['positionName'] = io['positionName'] + "Needed"
+            oo['timing'] = timeFunctions.convertMilitaryToDisplay(io['startTime']) + " - " +  timeFunctions.convertMilitaryToDisplay(io['endTime'])
+            oo['totalCost'] = currencyFunctions.convertIntegerToDisplayDollars(totalCost)
+            oo['hourlyString'] = currencyFunctions.convertIntegerToDisplayDollars(io['hourlyRate']) + " per hour"
+            oo['description'] = io['description']
+            oo['address1'] = io['address1']
+            oo['address2'] = io['address2']
+            oo['cityState'] = io['city'] + ", " + io['state']
+            oo['zipCode'] = io['zipCode']
+            
+            return oo
+            
+    }
+    
+        
+    });
+
 
     Template.viewOpportunity.rendered = function () {
         Meteor.subscribe("allOpportunities");
@@ -8,28 +35,10 @@ if (Meteor.isClient) {
 
         cLog("client_viewOpportunity.js", "viewOpportunity rendered")
         
-        displayOpportunity = function(x){
-            
-            spaceElementText('opportunityTitle', 25, x['positionName'])
-            //$("#opportunityTitle").html(x['positionName'])
-            $("#opportunityTiming").html(x['needDate'])
-            $("#opportunityTimingShort").html(x['needDate'])
-            $("#opportunityTimeFrame").html(x['timeFrame'])
-            $("#opportunityHourlyRate").html(x['hourlyRate'])
-            $("#opportunityCostTotal").html(x['totalPay'])
-            $("#opportunityJobDescription").html(x['description'])
-            $("#opportunityOfficeName").html(x['officeName'])
-            $("#opportunityAddress1").html(x['address1'])
-            $("#opportunityAddress2").html(x['address2'])
-            $("#opportunityCityState").html(x['cityState'])
-            $("#opportunityZipCode").html(x['zipCode'])
-            $("#gmap").attr('src',x['iframeMetaData']);
-        }
+
         
         $(document).ready(function(){
-            Meteor.call('getOpportunityDetails', Router.current().params._id, function(err,res){
-                            displayOpportunity(res)
-            })
+
             
             if(getUserType(Meteor.userId()) === 'dentist'){
                 $("#assistantActionContainer").html("THIS IS A DENTIST")
