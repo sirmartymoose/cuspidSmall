@@ -5,6 +5,18 @@ if (Meteor.isClient) {
             
             oo = {}
             io =  opportunities.findOne({_id: Router.current().params._id})
+            userType = getUserType(Meteor.userId())
+            isDentistViewingOpportunity = false 
+            isAssistantViewingOpportunity = false
+            
+            if(userType === 'dentist'){
+                isDentistViewingOpportunity = true
+            }
+            if(userType === 'assistant'){
+                isAssistantViewingOpportunity = true
+            }         
+            
+
 
             numHours = io['endTime'] - io['startTime']
             totalCost = numHours * io['hourlyRate']
@@ -19,7 +31,9 @@ if (Meteor.isClient) {
             oo['address2'] = io['address2']
             oo['cityState'] = io['city'] + ", " + io['state']
             oo['zipCode'] = io['zipCode']
-            
+            oo['isBooked'] = io['booking']['isBooked']
+            oo['isAssistantViewingOpportunity'] = isAssistantViewingOpportunity
+            oo['isDentistViewingOpportunity'] = isDentistViewingOpportunity
             return oo
             
     }
@@ -40,9 +54,6 @@ if (Meteor.isClient) {
         $(document).ready(function(){
 
             
-            if(getUserType(Meteor.userId()) === 'dentist'){
-                $("#assistantActionContainer").html("THIS IS A DENTIST")
-            } 
         
             $("#acceptPositionButton").click(function(){
                 Meteor.call('markOpportunityAsBooked',Router.current().params._id, function(err,res){console.log(err); console.log(res)})

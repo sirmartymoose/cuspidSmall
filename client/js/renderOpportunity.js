@@ -33,3 +33,18 @@
                     return opportunities.find({'booking.isBooked':true}).fetch()
                 }
         }
+        
+        getOpportunities = function(isBooked, isNew, isPending, isPast){
+                if(isBooked == 1){
+                    return opportunities.find({'booking.isBooked':true}).fetch()
+                }
+                if(isNew == 1){
+                    return opportunities.find({'isNew':true}).fetch()
+                }
+                if(isPending == 1){
+                    return opportunities.find({'isPending':true}).fetch()
+                }
+                if(isPast == 1){
+                    return opportunities.find({'isPast':true}).fetch()
+                }
+        }

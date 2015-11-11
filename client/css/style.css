@@ -118,3 +118,12 @@
 .opportunitySecondary{
     font-size: 1.0em;
 }
+
+#registerRow{
+    margin-top: 15px;
+}
+
+#submitRow{
+    margin: 15px;
+    align-content: right;
+}

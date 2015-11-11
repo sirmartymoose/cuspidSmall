@@ -64,7 +64,20 @@
                    </div>
                </div>
                 <div class="col-xs-12">
-                    <button type="button" class="btn btn-success">Success</button>
+                    
+                    {{#if opportunityData.isBooked}}
+                        {{#if opportunityData.isDentistViewingOpportunity}}
+                            <p>This has been booked</p>
+                        {{else}}
+                            <p>You have booked This Job</p>
+                        {{/if}}
+                    {{else}}
+                          {{#if opportunityData.isDentistViewingOpportunity}}
+                              <p> This is still an open position</p>
+                          {{else}}
+                                <button type="button" class="btn btn-success" id="acceptPositionButton">Book It!</button>
+                          {{/if}}
+                    {{/if}}
 
                </div>
                           

@@ -1,18 +1,22 @@
 if (Meteor.isClient) {
-    
-    // Check the rendering templates with data section here http://iron-meteor.github.io/iron-router/
-  
-
      Template.listOpportunities.onRendered(function () {
-        cLog("client_listOpportunities.js", "listOpportunties template onRendered")
-        
-
+        cLog("client_listOpportunities.js", "listOpportunities template onRendered")
 
         $(document).ready(function(){
-             myCurrentOpportunities = getRelevantOpportunities(0)
-             renderOpportunityList(myCurrentOpportunities, 'listOpportunitiesCurrentOpportunities', 1000)
-        
-        
+            cLog("client_listOpportunities.js", "listOpportunities documentReady")
          })
     })
+    
+Template.listOpportunities.helpers({
+      opps: function () {
+        oppsData = getOpportunities(0,1,0,0)
+        
+        $(oppsData).each(function(x,y){
+            y['formattedDate'] = timeFunctions.displayDateMMDDYYYY(y['needDate'])
+        })
+        
+        return oppsData
+      }
+});
 }
+

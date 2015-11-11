@@ -26,9 +26,10 @@
                    {{#if currentUser.profile.profileCreated}}
                          <li><a href="/updateDentist">Manage Your profile</a></li>
                          <li><a href="/createOpportunity">createOpportunity</a></li>
-                         <li><a href="/listOpportunities">view Your Open Positions</a></li>
-                         <li><a href="/listBookings">View Previous Positions</a></li>
-                   
+                         <li><a href="/listOpportunities">Open Jobs</a></li>
+                         <li><a href="/listPending">Pending Jobs</a></li>
+                         <li><a href="/pastOpportunities">Past Jobs</a></li>
+
                    {{else}}
                          <li><a href="/createDentist">Create a profile</a></li>
                    {{/if}}
@@ -36,8 +37,9 @@
              {{#if currentUser.profile.isAssistant}}
                   {{#if currentUser.profile.profileCreated}}
                       <li><a href="/updateAssistant">Manage Your profile</a></li>
-                      <li><a href="/listOpportunities">view Opportunities</a></li>
-                      <li><a href="/listBookings">View booked Jobs</a></li>
+                      <li><a href="/listOpportunities">Work Opportunities</a></li>
+                      <li><a href="/listPending">Upcoming Work</a></li>
+                      <li><a href="/pastOpportunities">Past Work</a></li>
                     {{else}}
                       <li><a href="/createAssistant">Create a profile</a></li>
                       {{/if}}
@@ -47,8 +49,10 @@
 
         {{/if}}
         
+        {{#if currentUser.profile.isAdmin}}
+                 <li><a href="/admin">Admin</a></li> 
 
-
+        {{/if}}
 
 
       </ul>
