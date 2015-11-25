@@ -16,6 +16,14 @@ Template.listPending.helpers({
         })
         
         return oppsData
+      },
+        isThereAnOppToDisplay: function(){
+          var myOpp = Template.listPending.__helpers.get('opps').call()
+          if (myOpp.length > 0){
+              return true
+          } else {
+              return false
+          }
       }
 });
 }

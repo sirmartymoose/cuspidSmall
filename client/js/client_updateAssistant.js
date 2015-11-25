@@ -5,7 +5,7 @@ if (Meteor.isClient) {
          cLog("client_updateAssistant.js", "updateAssistant template rendered"); 
                  AutoForm.addHooks('updateAssistantForm', {onSuccess: function(){
                      cLog("client_updateAssistant.js", "updateAssistant form completed"); 
-                     checkUserProfileStatus(); 
+                     //checkUserProfileStatus(); 
                      Router.go('dashboard'); 
                      cLog("client_updateAssistant.js", "Routing to dashboard"); 
                  }});

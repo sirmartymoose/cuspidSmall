@@ -10,6 +10,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class='row'>
                 <div class='col-xs-12'>
                     <div class="panel panel-default">
@@ -27,6 +28,7 @@
                     </div>
                 </div>
             </div>
+             {{#if isApproved}}
                         <div class='row'>
                 <div class='col-xs-12'>
                     <div class="panel panel-default">
@@ -39,12 +41,81 @@
                         </div>
                         <!-- List group -->
                         <ul class="list-group" id="dashboardCurrentOpportunities">
+                        {{#if isThereNewOppToDisplay}}
+                            {{#each newOpps}}
+                            <li class='list-group-item'>
+                                <div class='row'>
+                                    <div class='col-xs-10'>
+                                        <div class='row'>
+                                            <div class='col-xs-12 listing_positionTitle'> <a href="/viewOpportunity/{{_id}}"> {{positionName}}</a>
+
+                                            </div>
+                                        </div>
+                                        <div class='row'>
+                                            <div class='col-xs-12 listing_positionTiming'>{{formattedDate}}</div>
+                                        </div>
+                                    </div>
+                                    <div class='col-xs-2'>
+                                        <div class='row'>
+                                            <div class='col-xs-12 listing_positionStatus'>New</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            {{/each}}
+                           {{else}}
+                            Nope
+                        {{/if}}
+                            
 
                         </ul>
                     </div>
                 </div>
             </div>
+
+
                                     <div class='row'>
+                <div class='col-xs-12'>
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                                                <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-8">Pending Jobs (Most Recent)</div>
+                                <div class="col-xs-4 textAlignRight"><a href="/listBookings">View All</a></div>
+                            </div>
+                        </div>
+                        <!-- List group -->
+                        <ul class="list-group" id="dashboardCurrentBookings">
+                            {{#if isTherePendingOppToDisplay}}
+                            {{#each pendingOpps}}
+                            <li class='list-group-item'>
+                                <div class='row'>
+                                    <div class='col-xs-10'>
+                                        <div class='row'>
+                                            <div class='col-xs-12 listing_positionTitle'> <a href="/viewOpportunity/{{_id}}"> {{positionName}}</a>
+
+                                            </div>
+                                        </div>
+                                        <div class='row'>
+                                            <div class='col-xs-12 listing_positionTiming'>{{formattedDate}}</div>
+                                        </div>
+                                    </div>
+                                    <div class='col-xs-2'>
+                                        <div class='row'>
+                                            <div class='col-xs-12 listing_positionStatus'>Pending</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            {{/each}}
+                                                       {{else}}
+                            Nope
+                        {{/if}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                                                <div class='row'>
                 <div class='col-xs-12'>
                     <div class="panel panel-default">
                         <!-- Default panel contents -->
@@ -56,11 +127,38 @@
                         </div>
                         <!-- List group -->
                         <ul class="list-group" id="dashboardCurrentBookings">
+                                                        {{#if isTherePastOppToDisplay}}
 
+                            {{#each pastOpps}}
+                            <li class='list-group-item'>
+                                <div class='row'>
+                                    <div class='col-xs-10'>
+                                        <div class='row'>
+                                            <div class='col-xs-12 listing_positionTitle'> <a href="/viewOpportunity/{{_id}}"> {{positionName}}</a>
+
+                                            </div>
+                                        </div>
+                                        <div class='row'>
+                                            <div class='col-xs-12 listing_positionTiming'>{{formattedDate}}</div>
+                                        </div>
+                                    </div>
+                                    <div class='col-xs-2'>
+                                        <div class='row'>
+                                            <div class='col-xs-12 listing_positionStatus'>Past</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                                                        {{/each}}
+                                                       {{else}}
+                            Nope
+                        {{/if}}
                         </ul>
                     </div>
                 </div>
             </div>
+                        {{/if}}
 
         </div>
         <div class="col-xs-0 col-md-3"></div>

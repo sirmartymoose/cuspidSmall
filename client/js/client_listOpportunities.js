@@ -16,6 +16,15 @@ Template.listOpportunities.helpers({
         })
         
         return oppsData
+      }, 
+      
+      isThereAnOppToDisplay: function(){
+          var myOpp = Template.listOpportunities.__helpers.get('opps').call()
+          if (myOpp.length > 0){
+              return true
+          } else {
+              return false
+          }
       }
 });
 }

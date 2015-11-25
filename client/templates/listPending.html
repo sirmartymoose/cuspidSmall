@@ -19,7 +19,9 @@
                             </div>
                         </div>
                         <!-- List group -->
-                        <ul class="list-group" id="listOpportunitiesCurrentOpportunities">{{#each opps}}
+                        <ul class="list-group" id="listOpportunitiesCurrentOpportunities">
+                            {{#if isThereAnOppToDisplay}}
+                            {{#each opps}}
                             <li class='list-group-item'>
                                 <div class='row'>
                                     <div class='col-xs-10'>
@@ -38,7 +40,20 @@
                                         </div>
                                     </div>
                                 </div>
-                            </li>{{/each}}</ul>
+                            </li>
+                            
+                            {{/each}}
+                            {{else}}
+                            <li class='list-group-item'>
+                                 <div class='row'>
+                                     <div class='col-xs-12'>
+                                         There are no opportunities to display
+                                     </div>
+                                 </div>
+                            </li>
+                            {{/if}}
+                            
+                            </ul>
                     </div>
                 </div>
             </div>

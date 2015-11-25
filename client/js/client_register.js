@@ -34,6 +34,7 @@ if (Meteor.isClient) {
             cLog("client_register.js", "User Creation Failed"); 
           } else {
             cLog("client_register.js", "Register template Success"); 
+            Router.go('dashboard')
           }
         });
 

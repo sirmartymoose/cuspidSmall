@@ -22,7 +22,7 @@ if (Meteor.isClient) {
             totalCost = numHours * io['hourlyRate']
 
             oo['status'] = getOpportunityStatus(io)
-            oo['positionName'] = io['positionName'] + "Needed"
+            oo['positionName'] = io['positionName'] + " Needed"
             oo['timing'] = timeFunctions.convertMilitaryToDisplay(io['startTime']) + " - " +  timeFunctions.convertMilitaryToDisplay(io['endTime'])
             oo['totalCost'] = currencyFunctions.convertIntegerToDisplayDollars(totalCost)
             oo['hourlyString'] = currencyFunctions.convertIntegerToDisplayDollars(io['hourlyRate']) + " per hour"
@@ -34,6 +34,8 @@ if (Meteor.isClient) {
             oo['isBooked'] = io['booking']['isBooked']
             oo['isAssistantViewingOpportunity'] = isAssistantViewingOpportunity
             oo['isDentistViewingOpportunity'] = isDentistViewingOpportunity
+            oo['iframeMetaData'] = "https://maps.google.com/maps?hl=en&q=" + io['address1'] + " " + io['city'] + io['state'] + "&ie=UTF8&t=roadmap&z=14&iwloc=B&output=embed"
+
             return oo
             
     }

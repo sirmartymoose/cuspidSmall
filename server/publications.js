@@ -6,7 +6,7 @@ Meteor.publish("allOpportunities", function () {
     if(getUserType(this.userId) === 'assistant'){
         assistantRecord = assistants.find({'assistantUserId': this.userId}).fetch()
         assistantRecordState = assistantRecord[0]['state']
-        return opportunities.find({'booking.isBooked':false, state: assistantRecordState})
+        return opportunities.find({'booking.isBooked':false, state: assistantRecordState, isNew: true})
     }
     else {
         //return opportunities.find({})

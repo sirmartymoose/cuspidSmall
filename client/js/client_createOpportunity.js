@@ -1,6 +1,23 @@
 if (Meteor.isClient) {
     Template.createOpportunity.rendered = function () {
         cLog("client_createOpportunity.js", "create opportunity rendered")
+        
+        
+        AutoForm.addHooks('insertOpportunityForm', {onSuccess: function(){
+            cLog("client_createOpportunity.js", "Insert Opportunity successfull")
+            console.log(this.insertDoc)
+            iDoc = this.insertDoc
+            Router.go('dashboard'); 
+            cLog("client_createOpportunity.js", "redirecting user to the dashboard")
+        }});
+        
+        
+        
+        
+        
+        
+        
+        
     $(document).ready(function(){
         cLog("client_createOpportunity.js", "document ready")
         

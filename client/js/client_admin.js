@@ -1,30 +1,25 @@
 if (Meteor.isClient) {
-     Template.pastOpportunities.onRendered(function () {
+     Template.admin.onRendered(function () {
         cLog("client_pastOpportunities.js", "PastOpportunities template onRendered")
 
         $(document).ready(function(){
             cLog("client_pastOpportunities.js", "pastOpportunities documentReady")
+            $('.adminMarkAsPast').click(function(){
+                thisOppId = $(this).attr("id");
+                Meteor.call('changeOpportunityDates',thisOppId, 600, "Dave1234")
+            })
          })
     })
     
-Template.pastOpportunities.helpers({
-      opps: function () {
-        oppsData = getOpportunities(0,0,0,1)
+Template.admin.helpers({
+      pendingOpps: function () {
+        oppsData = getOpportunities(0,0,1,0)
         
         $(oppsData).each(function(x,y){
             y['formattedDate'] = timeFunctions.displayDateMMDDYYYY(y['needDate'])
         })
-        
         return oppsData
-      }, 
-        isThereAnOppToDisplay: function(){
-         var myOpp = Template.pastOpportunities.__helpers.get('opps').call()
-          if (myOpp.length > 0){
-              return true
-          } else {
-              return false
-          }
       }
+      
 });
 }
-

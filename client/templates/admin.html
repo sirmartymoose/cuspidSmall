@@ -1,5 +1,7 @@
 <template name="admin">
 
-  <h1> ADMIN</h1>
-
+<h4> Mark a Pending Opportunity as Past</h4><br>
+{{#each pendingOpps}}
+    <div id={{_id}} class='adminMarkAsPast'>   {{positionName}} </div><br>
+{{/each}}
 </template>
