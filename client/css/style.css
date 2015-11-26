@@ -133,7 +133,7 @@
 
 
 .alignItemsCenter{
-        display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -179,5 +179,15 @@
 
 #mapFrame{
     margin-left: 40px;
+    margin-top: 15px;
+}
+
+#acceptPositionButton{
+    position:relative;
+    float: right;
+    margin-top:15px;
+}
+
+#signOut{
     margin-top: 15px;
 }

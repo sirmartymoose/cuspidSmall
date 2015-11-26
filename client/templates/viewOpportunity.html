@@ -68,9 +68,9 @@
                        <div class="col-xs-12 opportunityPrimary">
                           Map
                        </div>
-                       
-<iframe class="alignItemsCenter" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src={{opportunityData.iframeMetaData}}></iframe>
-                       
+                       <div class="col-xs-12 alignItemsCenter">
+<iframe  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src={{opportunityData.iframeMetaData}}></iframe>
+                       </div>
 
                    </div>
                </div>
@@ -78,14 +78,45 @@
                     
                     {{#if opportunityData.isBooked}}
                         {{#if opportunityData.isDentistViewingOpportunity}}
-                            <p>This has been booked</p>
+                            <div class="col-xs-12">
+                               <div class="row opportunityStrip">
+                                   <div class="col-xs-12 opportunityPrimary">
+                                      Status
+                                   </div>
+                                   <div class="col-xs-12 opportunitySecondary">This job has been booked.</div>
+                               </div>
+                           </div>
+                            
+                            
+                            
+                            
                         {{else}}
-                            <p>You have booked This Job</p>
+
+                            <div class="col-xs-12">
+                               <div class="row opportunityStrip">
+                                   <div class="col-xs-12 opportunityPrimary">
+                                      Status
+                                   </div>
+                                   <div class="col-xs-12 opportunitySecondary">You booked this position</div>
+                               </div>
+                           </div>
+
+
                         {{/if}}
                     {{else}}
                           {{#if opportunityData.isDentistViewingOpportunity}}
-                              <p> This is still an open position</p>
+
+                            <div class="col-xs-12">
+                               <div class="row opportunityStrip">
+                                   <div class="col-xs-12 opportunityPrimary">
+                                      Status
+                                   </div>
+                                   <div class="col-xs-12 opportunitySecondary">This job is still available</div>
+                               </div>
+                           </div>
+
                           {{else}}
+                          
                                 <button type="button" class="btn btn-success" id="acceptPositionButton">Book It!</button>
                           {{/if}}
                     {{/if}}

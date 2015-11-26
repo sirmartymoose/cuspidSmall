@@ -1,7 +1,18 @@
 <template name="admin">
-
-<h4> Mark a Pending Opportunity as Past</h4><br>
-{{#each pendingOpps}}
-    <div id={{_id}} class='adminMarkAsPast'>   {{positionName}} </div><br>
-{{/each}}
+<div class="container">
+    <div class="row">
+        <div class="row">
+            <div class="col-xs-12">
+                <h4> Mark a Pending Opportunity as Past</h4><br>
+            </div>
+        </div>
+        <div class="row">
+            {{#each pendingOpps}}
+                <div class="col-xs-12">
+                    <div id={{_id}} class='adminMarkAsPast'>   {{positionName}} </div><br>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
 </template>
