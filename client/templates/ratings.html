@@ -1,12 +1,56 @@
 <template name="ratings">
+htere
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                     <h4 class="modal-title">Unrated Work</h4>
 
-<div class="rating">
-    <div class='ratingStar' id='ratingOne'>☆</div>
-    <div class='ratingStar' id='ratingTwo'>☆</div>
-    <div class='ratingStar' id='ratingThree'>☆</div>
-    <div class='ratingStar' id='ratingFour'>☆</div>
-    <div class='ratingStar' id='ratingFive'>☆</div>
-    <div id="ratingSelection" value="0" ></div>
-</div>
+                </div>
+                <div class="modal-body">
+                    b
+                    
+                    {{#each unrated}}
+                    <div class="row">
+                    <div class="col-xs-2">
+                        {{positionName}}
+                    </div>
+                    <div class="col-xs-2">
+                        {{officeName}}
+                    </div>
+                    <div class="col-xs-4">
+                        <form>
+                            <input type="hidden" name="ratingId" value={{_id}} />
+                            <div class="form-group">
+                                <label for="jobRating">Rating</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" value="1">1</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" value="2">2</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" value="3">3</label>
+                                            <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" value="4">4</label>
+                                                        <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" value="5">5</label>
+                            </div>
+                            <input type='button' class="btn btn-default ratingButton" name="button" value="Submit">
+                        </form>
+                    </div>
+                    <div class="col-xs-2">
+                        
+                        
+                    </div>
+                    </div>
+                    {{/each}}
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </template>

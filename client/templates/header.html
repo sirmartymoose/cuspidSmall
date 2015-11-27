@@ -15,53 +15,55 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">{{#if currentUser}} {{#if currentUser.profile.isDentist}} {{#if currentUser.profile.profileCreated}}
                     <li><a href="/updateDentist">Manage Your profile</a>
+
                     </li>{{#if currentUser.profile.isApproved}}
                     <li><a href="/createOpportunity">createOpportunity</a>
+
                     </li>
                     <li><a href="/listOpportunities">Open Jobs</a>
+
                     </li>
                     <li><a href="/listPending">Pending Jobs</a>
+
                     </li>
                     <li><a href="/pastOpportunities">Past Jobs</a>
+
                     </li>{{/if}} {{else}}
                     <li><a href="/createDentist">Create a profile</a>
+
                     </li>{{/if}} {{/if}} {{#if currentUser.profile.isAssistant}} {{#if currentUser.profile.profileCreated}}
                     <li><a href="/updateAssistant">Manage Your profile</a>
+
                     </li>{{#if currentUser.profile.isApproved}}
                     <li><a href="/listOpportunities">Work Opportunities</a>
+
                     </li>
                     <li><a href="/listPending">Upcoming Work</a>
+
                     </li>
                     <li><a href="/pastOpportunities">Past Work</a>
+
                     </li>{{/if}} {{else}}
                     <li><a href="/createAssistant">Create a profile</a>
+
                     </li>{{/if}} {{/if}} {{else}} {{/if}} {{#if currentUser.profile.isAdmin}}
                     <li><a href="/admin">Admin</a>
+
                     </li>{{/if}}</ul>
                 <ul class="nav navbar-nav navbar-right">{{#if currentUser}}
                     <li id="signOut">Sign Out</li>{{else}}
                     <li><a href="/register">Register</a>
+
                     </li>
                     <li><a href="/login">Login</a>
+
                     </li>{{/if}}</ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                     <h4 class="modal-title">Modal Header</h4>
-
-                </div>
-                <div class="modal-body">{{> ratings}}</div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+        {{#if hasUnrated}}
+            {{> ratings}}
+        {{/if}}
 </template>

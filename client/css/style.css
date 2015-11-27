@@ -1,17 +1,7 @@
-.c_1{
 
-}
 
-.c_2{
-
-}
-
-.c_3{
-
-}
-
-.c_4{
-
+body{
+    font-family: 'Open Sans', sans-serif;
 }
 
 #header{
@@ -137,46 +127,6 @@
     align-items: center;
     justify-content: center;
 }
-/*
-	Ratings Stars
-	(with as little code as possible)
-*/
-
-.rating {
-
-    unicode-bidi: bidi-override;
-
-    direction: rtl;
-
-    text-align: center;
-    
-    position: relative; 
-    
-    float: left;
-
-}
-
-.selectedStar {
-
-    color: red;
-    position: relative; 
-    float: left;
-
-}
-
-.unSelectedStar {
-
-    color: black;
-
-}
-
-.ratingStar {
-
-    position: relative; 
-    float: left;
-
-}
-
 #mapFrame{
     margin-left: 40px;
     margin-top: 15px;

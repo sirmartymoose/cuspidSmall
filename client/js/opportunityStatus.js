@@ -1,5 +1,4 @@
 getOpportunityStatus = function(opportunityObject){
-    cLog("GETOPPORTUNITYSTATUS RUN")
     //'booking.isBooked'
     //'booking.hasOccurred'
     //'booking.isBilled'

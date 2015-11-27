@@ -1,5 +1,8 @@
 if (Meteor.isClient) {
     
+    /// Load Fo
+    
+    
     Template.header.events({
         'click #signOut': function (event) {
             cLog("SIGNOUT CLICKED")
@@ -22,3 +25,28 @@ if (Meteor.isClient) {
          })
     }
 }
+
+Template.header.helpers({
+    hasUnrated: function(){
+        uType = getUserType(Meteor.userId())
+        
+        if(uType === "dentist"){
+            //cLog("UTYPE IS DENTIST")
+            uo = findUnratedOpportunities(1)
+            if(uo.length > 0){
+                return true
+            }
+            
+        }
+        if(uType ===  "assistant"){
+             //cLog("UTYPE IS DENTIST")
+            uo = findUnratedOpportunities(0)
+            if(uo.length > 0){
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+})
