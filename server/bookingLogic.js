@@ -4,9 +4,9 @@ Meteor.methods({
     
     markOpportunityAsBooked: function(oId){
         var outData = opportunities.find({_id: oId}).fetch()
-        //var rawPay = (parseInt(outData['endTime']) - parseInt(outData['startTime'])) * outData['hourlyRate']
-        //rawPay = parseInt(rawPay)
-        //console.log(rawPay)
+        var rawPay = (parseInt(outData['endTime']) - parseInt(outData['startTime'])) * outData['hourlyRate']
+        rawPay = parseInt(rawPay)
+        console.log(rawPay)
         var contractedDate = new Date()
         
         
@@ -15,7 +15,7 @@ Meteor.methods({
         opportunities.update({_id: oId},{$set: {'status': 'booking'}})
         opportunities.update({_id: oId},{$set: {'booking.hasOccurred': true}})
         opportunities.update({_id: oId},{$set: {'booking.contractedDate': contractedDate}})
-        //opportunities.update({_id: oId},{$set: {'booking.agreedAmount': rawPay}})
+        opportunities.update({_id: oId},{$set: {'booking.agreedAmount': rawPay}})
         
         // Mark the opportunity as pending
         

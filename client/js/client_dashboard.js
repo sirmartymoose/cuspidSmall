@@ -32,7 +32,7 @@ if (Meteor.isClient) {
             oppsData = getOpportunities(0, 0, 0, 1)
 
             $(oppsData).each(function (x, y) {
-                y['formattedDate'] = timeFunctions.displayDateMMDDYYYY(y['needDate'])
+                y['formattedDate'] = timeFunctions.displayDateWithHelpers(y['needDate'])
             })
 
             return oppsData
@@ -51,7 +51,7 @@ if (Meteor.isClient) {
             oppsData = getOpportunities(0, 0, 1, 0)
 
             $(oppsData).each(function (x, y) {
-                y['formattedDate'] = timeFunctions.displayDateMMDDYYYY(y['needDate'])
+                y['formattedDate'] = timeFunctions.displayDateWithHelpers(y['needDate'])
             })
 
             return oppsData
@@ -70,7 +70,7 @@ if (Meteor.isClient) {
             oppsData = getOpportunities(0, 1, 0, 0)
 
             $(oppsData).each(function (x, y) {
-                y['formattedDate'] = timeFunctions.displayDateMMDDYYYY(y['needDate'])
+                y['formattedDate'] = timeFunctions.displayDateWithHelpers(y['needDate'])
             })
 
             return oppsData
@@ -90,6 +90,8 @@ if (Meteor.isClient) {
             var userProfile = Meteor.users.find().fetch()[0]['profile']['isApproved']
             return userProfile
         }
+        
+        
     });
 
 }
