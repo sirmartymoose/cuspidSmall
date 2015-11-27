@@ -84,6 +84,11 @@ Meteor.methods({
         var d = createTestOpportunity()
         opportunities.insert(d)
         return d;
+    }, 
+    
+    deleteTestOpportunities: function(){
+        opportunities.remove({isTestData: true})
     }
+    
     
 })

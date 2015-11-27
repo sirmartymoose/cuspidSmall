@@ -50,3 +50,9 @@ Template.ratings.onRendered(function () {
         }
         
     })
+    
+    
+Template.ratings.onDestroyed(function () {
+    location.reload();
+
+});

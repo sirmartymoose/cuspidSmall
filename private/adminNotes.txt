@@ -1,3 +1,8 @@
 Meteor.call('makeUserAdmin', Meteor.userId(), "Dave1234")
 
 Meteor.call('approveUserProfile', Meteor.userId(), "Dave1234")
+
+Meteor.call('createTestOpportunityMethod', function(err,res){console.log(res)})
+
+
+AutoForm.debug()
